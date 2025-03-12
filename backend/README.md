@@ -15,8 +15,8 @@ A simple event ticketing application built with NestJS, GraphQL, and TypeORM. Th
     - [Install Dependencies](#install-dependencies)
   - [Database Configuration](#database-configuration)
     - [Datbase migration](#datbase-migration)
+    - [Seeding](#seeding)
   - [Running the Application](#running-the-application)
-  - [Seeding](#seeding)
   - [Testing](#testing)
   - [Folder Structure](#folder-structure)
   - [Shortcuts \& Assumptions](#shortcuts--assumptions)
@@ -107,6 +107,14 @@ pnpm run migration:run
 
 This will create `event` and `order` table in the database.
 
+### Seeding
+
+Create a seed factory for events. This file will generate new Event objects with randomized data. Create a file at src/seeds/event.factory.ts with the following content:
+
+```bash
+pnpm run seed
+```
+
 ## Running the Application
 
 Start the application in development mode with hot reloading:
@@ -116,14 +124,6 @@ pnpm run start:dev
 ```
 
 You can access the GraphQL Playground at: [http://localhost:3000/graphql](http://localhost:3000/graphql)
-
-## Seeding
-
-Create a seed factory for events. This file will generate new Event objects with randomized data. Create a file at src/seeds/event.factory.ts with the following content:
-
-```bash
-pnpm run seed
-```
 
 ## Testing
 
