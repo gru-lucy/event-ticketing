@@ -30,9 +30,9 @@ async function bootstrap() {
   const eventRepository = dataSource.getRepository(Event);
 
   /*
-     Optional: Clears all existing events from the database before seeding.
+     Optional: Truncates the event table to remove all existing records before seeding.
     */
-  await eventRepository.clear();
+  await eventRepository.query('TRUNCATE TABLE "event" CASCADE');
 
   /*
      Generates an array of 10 event objects using the factory function.

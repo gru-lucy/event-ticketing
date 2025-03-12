@@ -14,6 +14,7 @@ A simple event ticketing application built with NestJS, GraphQL, and TypeORM. Th
     - [Clone the Repository](#clone-the-repository)
     - [Install Dependencies](#install-dependencies)
   - [Database Configuration](#database-configuration)
+    - [Datbase migration](#datbase-migration)
   - [Running the Application](#running-the-application)
   - [Seeding](#seeding)
   - [Testing](#testing)
@@ -97,6 +98,14 @@ TypeOrmModule.forRoot({
 ```
 
 Note: The `synchronize: true` flag is useful during development but should be disabled in production.
+
+### Datbase migration
+
+```bash
+pnpm run migration:run
+```
+
+This will create `event` and `order` table in the database.
 
 ## Running the Application
 

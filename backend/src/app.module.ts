@@ -8,6 +8,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { EventModule } from './event/event.module';
 import { OrderModule } from './order/order.module';
 import * as dotenv from 'dotenv';
+import { Event } from './event/event.entity';
+import { Order } from './order/order.entity';
 
 dotenv.config();
 
@@ -30,7 +32,7 @@ dotenv.config();
       username: process.env.DB_USERNAME || 'postgres',
       password: process.env.DB_PASSWORD || 'postgres',
       database: process.env.DB_NAME || 'event-ticketing',
-      entities: ['dist/**/*.entity{.ts,.js}'],
+      entities: [Event, Order],
       synchronize: true,
     }),
     EventModule,
